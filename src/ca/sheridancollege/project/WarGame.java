@@ -83,7 +83,7 @@ public class WarGame extends Game{
      */
     @Override
     public ArrayList<PlayerOfWarGame> getPlayers() {
-        return players;
+        return this.players;
     }
 
     /**

@@ -15,7 +15,7 @@ public class PlayerOfWarGame extends Player {
 
     @Override
     public void play() {
-        
+        System.out.println("start playing");
     }
 
     /**
