@@ -4,46 +4,31 @@
  */
 package ca.sheridancollege.project;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author liangzeng
  */
 public class PlayerOfWarGame extends Player {
     
-    private CardOfWarGame card;
-    private int numberOfCard;
+    private String name;
+    private Hand hand;
+
+    public PlayerOfWarGame(String name) {
+        super(name);
+    }
+
+    public Hand getHand() {
+        return this.hand;
+    }
+
+    public void setHand(Hand hand) {
+        this.hand = hand;
+    }
 
     @Override
     public void play() {
-        System.out.println("start playing");
+       
     }
-
-    /**
-     * @return the card
-     */
-    public CardOfWarGame getCard() {
-        return card;
-    }
-
-    /**
-     * @param card the card to set
-     */
-    public void setCard(CardOfWarGame card) {
-        this.card = card;
-    }
-
-    /**
-     * @return the numberOfCard
-     */
-    public int getNumberOfCard() {
-        return numberOfCard;
-    }
-
-    /**
-     * @param numberOfCard the numberOfCard to set
-     */
-    public void setNumberOfCard(int numberOfCard) {
-        this.numberOfCard = numberOfCard;
-    }
-    
 }
