@@ -12,12 +12,12 @@ import java.util.Scanner;
  *
  * @author liangzeng
  */
-public class WarGame extends Game{
+public class WarGame{
     
     private final String name = "War Game";
     
-    WarGame(String name){
-        super(name);
+    WarGame(){
+        
     }
     
     private GroupOfCards deck;
@@ -34,7 +34,7 @@ public class WarGame extends Game{
     /**
      * start the game
      */
-    @Override
+   
     public void play() {
         //print opening message
         
@@ -190,10 +190,10 @@ public class WarGame extends Game{
 
   
 
-    @Override
-    public void declareWinner(Player player) {
-        PlayerOfWarGame player1 = (PlayerOfWarGame) player;
-        System.out.printf("The winner of the game is %s!", player1.getName());
+    
+    public static String declareWinner(PlayerOfWarGame player) {
+   
+        return  "The winner of the game is " + player.getName();
     }
 
 
