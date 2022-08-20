@@ -194,6 +194,10 @@ public class WarGame extends Game{
         PlayerOfWarGame player1 = (PlayerOfWarGame) player;
         System.out.printf("The winner of the game is %s!", player1.getName());
     }
+    
+    public static String declareWinner(PlayerOfWarGame player){
+        return "The winner of the game is ," + player.getName();
+    }
 
 
 
