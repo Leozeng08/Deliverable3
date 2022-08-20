@@ -12,12 +12,12 @@ import java.util.Scanner;
  *
  * @author liangzeng
  */
-public class WarGame{
+public class WarGame extends Game{
     
     private final String name = "War Game";
     
-    WarGame(){
-        
+    WarGame(String name){
+        super(name);
     }
     
     private GroupOfCards deck;
@@ -34,7 +34,6 @@ public class WarGame{
     /**
      * start the game
      */
-   
     public void play() {
         //print opening message
         
@@ -52,7 +51,7 @@ public class WarGame{
         this.cpuPlayer = new PlayerOfWarGame("CPU");
 
         //start Game Message
-        System.out.printf("%s ,let's Play!\n", humanPlayer.getName());
+        System.out.println("let's Play!\n"+ humanPlayer.getName());
 
         //create fresh deck
         deck = new GroupOfCards();
@@ -173,7 +172,7 @@ public class WarGame{
                 
                 System.out.printf("%-20s %-20s %-20s %-20s %s is winner.\n", 
                         playerOneFaceUp.toString(), playerOne.getHand().handSize(), 
-                        playerTwoFaceUp.toString(), playerTwo.getHand().handSize());
+                        playerTwoFaceUp.toString(), playerTwo.getHand().handSize(), humanPlayer.getName());
                 break;         
             case -1:
                 //Give all cards on table to player 2
@@ -181,7 +180,7 @@ public class WarGame{
                 playerTwo.getHand().mergeHand(pot);
                 System.out.printf("%-20s %-20s %-20s %-20s %s is winner.\n", 
                         playerOneFaceUp.toString(), playerOne.getHand().handSize(), 
-                        playerTwoFaceUp.toString(), playerTwo.getHand().handSize());
+                        playerTwoFaceUp.toString(), playerTwo.getHand().handSize(), cpuPlayer.getName());
                 break;
         }
 
@@ -190,10 +189,10 @@ public class WarGame{
 
   
 
-    
-    public static String declareWinner(PlayerOfWarGame player) {
-   
-        return  "The winner of the game is " + player.getName();
+    @Override
+    public void declareWinner(Player player) {
+        PlayerOfWarGame player1 = (PlayerOfWarGame) player;
+        System.out.printf("The winner of the game is %s!", player1.getName());
     }
 
 
